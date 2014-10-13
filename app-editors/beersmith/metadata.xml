@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">BeerSmith 2 Home Brewing Software</longdescription>
+	<maintainer>
+		<email>dean@newrepublicbrewing.com</email>
+		<name>Dean Brundage</name>
+	</maintainer>
+	<upstream>
+		<bugs-to>http://beersmith.com/support/</bugs-to>
+		<doc>http://beersmith.com/help2/</doc>
+		<maintainer>
+			<email>bsmith@beersmith.com</email>
+			<name>BeerSmith LLC</name>
+		</maintainer>
+	</upstream>
+</pkgmetadata>
