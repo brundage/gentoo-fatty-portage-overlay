@@ -9,11 +9,13 @@ PYTHON_DEPEND="2"
 
 LICENSE="AGPLv3"
 
-inherit eutils distutils user
+inherit eutils distutils user versionator
+
+MY_PV="9.0c.$(get_version_component_range 3)"
 
 DESCRIPTION="Open Source ERP & CRM"
 HOMEPAGE="https://www.odoo.com/"
-SRC_URI="https://nightly.odoo.com/9.0/nightly/src/${PN}_${PV}.tar.gz"
+SRC_URI="https://nightly.odoo.com/9.0/nightly/src/${PN}_${MY_PV}.tar.gz"
 
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
