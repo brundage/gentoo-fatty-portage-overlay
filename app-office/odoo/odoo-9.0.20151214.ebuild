@@ -22,36 +22,47 @@ KEYWORDS="~x86 ~amd64"
 IUSE="+postgres ldap ssl"
 
 CDEPEND="postgres? ( dev-db/postgresql )
-  dev-python/pytz
-  dev-python/simplejson
-  dev-python/requests
+  dev-python/Babel
+  dev-python/jinja
+  dev-python/mako
+  dev-python/markupsafe
+  dev-python/pillow
+  dev-python/pychart
+  dev-python/pyyaml
+  dev-python/werkzeug
+  dev-python/docutils
+  dev-python/feedparser
+  dev-python/gdata
+  dev-python/gevent
+  dev-python/greenlet
+  dev-python/jcconv
+  dev-python/lxml
+  dev-python/mock
+  dev-python/ofxparse
+  dev-python/passlib
+  dev-python/psutil
+  dev-python/psycogreen
+  dev-python/psycopg:2
   dev-python/pyPdf
   dev-python/pyparsing
-  dev-python/passlib
-  dev-python/decorator
-  dev-python/psutil
-  dev-python/docutils
-  dev-python/lxml
-  dev-python/psycopg:2
-  dev-python/pychart
-  dev-python/reportlab
-  media-gfx/pydot
-  net-libs/nodejs
-  dev-python/vobject
-  dev-python/mako
-  dev-python/pyyaml
-  dev-python/Babel
+  dev-python/pyserial
+  dev-python/python-dateutil
   ldap? ( dev-python/python-ldap )
   dev-python/python-openid
-  dev-python/werkzeug
-  dev-python/xlwt
-  dev-python/feedparser
-  dev-python/python-dateutil
+  dev-python/pytz
+  dev-python/pyusb
+  dev-python/qrcode
+  dev-python/reportlab
+  dev-python/requests
+  dev-python/six
   ssl? ( dev-python/pyopenssl )
+  dev-python/suds
   dev-python/vatnumber
-  dev-python/mock
-  dev-python/unittest2
-  dev-python/jinja
+  dev-python/vobject
+  dev-python/wsgiref
+  net-libs/nodejs
+  media-gfx/pydot
+  dev-python/xlwt
 "
 
 RDEPEND="${CDEPEND}"
