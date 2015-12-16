@@ -71,7 +71,7 @@ DEPEND="${CDEPEND}"
 ODOO_USER="odoo"
 ODOO_GROUP="odoo"
 
-S="${WORKDIR}/${P/9.0./9.0-}"
+S="${WORKDIR}/${P/9.0./9.0c-}"
 
 pkg_setup() {
   python_set_active_version 2
