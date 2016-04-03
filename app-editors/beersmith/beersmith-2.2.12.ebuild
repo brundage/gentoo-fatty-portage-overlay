@@ -23,7 +23,7 @@ DEPEND="app-arch/tar
 	sys-devel/binutils"
 
 RDEPEND="media-libs/libpng:1.2
-	net-libs/webkit-gtk
+	net-libs/webkit-gtk:2
 	virtual/jpeg"
 
 ARBALL="${DISTDIR}/${A}"
