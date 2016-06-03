@@ -23,6 +23,7 @@ IUSE="+postgres ldap ssl"
 
 CDEPEND="postgres? ( dev-db/postgresql )
   dev-python/Babel
+  dev-python/decorator
   dev-python/jinja
   dev-python/mako
   dev-python/markupsafe
@@ -116,6 +117,10 @@ pkg_postinst() {
   elog
   elog "Use odoo web interface in order to create a "
   elog "database for your company."
+  elog
+  elog "You will need to install less and less-pulgin-clean-css"
+  elog "  npm install -g less"
+  elog "  npm install -g less-plugin-clean-css"
 }
 
 psqlquery() {
