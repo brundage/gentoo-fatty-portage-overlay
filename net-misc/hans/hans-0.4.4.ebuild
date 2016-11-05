@@ -22,5 +22,6 @@ src_compile() {
 }
 
 src_install() {
+  mkdir -p "${D}/usr/bin"
   cp "${WORKDIR}/${P}/hans" "${D}/usr/bin" || die "Install failed!"
 }
