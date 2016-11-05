@@ -22,5 +22,5 @@ src_compile() {
 }
 
 src_install() {
-  cp "${WORKDIR}/${P}/hans" "${D}" || die "Install failed!"
+  cp "${WORKDIR}/${P}/hans" "${D}/usr/bin" || die "Install failed!"
 }
