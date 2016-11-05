@@ -15,3 +15,12 @@ SRC_URI="https://github.com/friedrich/hans/archive/v${PV}.zip"
 LICENSE="GPL"
 
 KEYWORDS="amd64 x86"
+
+src_compile() {
+  cd "${WORKDIR}/${P}"
+  emake
+}
+
+src_install() {
+  cp "${WORKDIR}/${P}/hans" "${D}" || die "Install failed!"
+}
