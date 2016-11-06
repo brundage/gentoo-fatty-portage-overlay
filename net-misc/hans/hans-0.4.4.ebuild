@@ -4,7 +4,9 @@
 EAPI="5"
 SLOT="0"
 
-S="${WORKDIR}"
+inherit eutils
+
+#S="${WORKDIR}"
 
 DESCRIPTION="IP over ICMP"
 
@@ -24,4 +26,9 @@ src_compile() {
 src_install() {
   mkdir -p "${D}/usr/bin"
   cp "${WORKDIR}/${P}/hans" "${D}/usr/bin" || die "Install failed!"
+}
+
+
+src_prepare() {
+  epatch "${FILESDIR}/${P}-ifconfig-path.patch"
 }
