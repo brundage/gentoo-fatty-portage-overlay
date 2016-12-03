@@ -32,7 +32,7 @@ POSTRM_PRESERVED="/usr/share/BeerSmith2/${MY_P}-postrm"
 PREINST="${WORKDIR}/preinst"
 PRERM="${WORKDIR}/prerm"
 PRERM_PRESERVED="/usr/share/BeerSmith2/${MY_P}-prerm"
-DATA="${WORKDIR}/data.tar.gz"
+DATA="${WORKDIR}/data.tar.xz"
 
 
 pkg_postinst() {
@@ -73,7 +73,7 @@ src_configure() {
 
 src_install() {
 	if [ -r ${DATA} ]; then
-		tar xzf ${DATA} -C "${D}"
+		tar xf ${DATA} -C "${D}"
 		preserve_rm_scripts
     else
 		die "data file not found at ${DATA}"
