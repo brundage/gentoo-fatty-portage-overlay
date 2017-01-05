@@ -14,7 +14,6 @@ HOMEPAGE="https://github.com/OCA/bank-statement-import"
 
 EGIT_CHECKOUT_DIR="${WORKDIR}/${P}"
 EGIT_REPO_URI="https://github.com/OCA/bank-statement-import.git"
-D="$(python_get_sitedir)/${PN}"
 
 LICENSE="AGPL"
 
@@ -23,5 +22,5 @@ KEYWORDS="amd64 x86"
 DEPEND="app-office/odoo"
 
 src_install() {
-  cp -R "${S}/" "${D}/" || die "Install failed!"
+  cp -R "${S}/" "$(python_get_sitedir)/${PN}/" || die "Install failed!"
 }
