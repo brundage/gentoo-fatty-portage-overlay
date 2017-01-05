@@ -17,6 +17,8 @@ DEPEND="app-office/odoo"
 
 src_install() {
   mkdir -p "${D}/$(python_get_sitedir)/${PN}/"
-  elog "rsync -aHSv ${S}/*  ${D}/$(python_get_sitedir)/${PN}/"
-  rsync -aHSv "${S}/*"  "${D}/$(python_get_sitedir)/${PN}/" || die "rsync -aHSv ${S}/*  ${D}/$(python_get_sitedir)/${PN}/"
+  for F in $(ls "${S}/account_bank*" "${S}/base*"}; do
+    elog "cp -Rp ${F} ${D}$(python_get_sitedir)"
+    cp -Rp "${F}" "${D}$(python_get_sitedir)" || die "cp -Rp ${F} ${D}$(python_get_sitedir)"
+  end
 }
