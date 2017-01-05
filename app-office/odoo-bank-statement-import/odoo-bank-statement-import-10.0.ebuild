@@ -12,8 +12,9 @@ DESCRIPTION="Odoo Bank Import Addons"
 
 HOMEPAGE="https://github.com/OCA/bank-statement-import"
 
-EGIT_CHECKOUT_DIR="${D}$(python_get_sitedir)"
+EGIT_CHECKOUT_DIR="${WORKDIR}"
 EGIT_REPO_URI="https://github.com/OCA/bank-statement-import.git"
+#"${D}$(python_get_sitedir)"
 
 LICENSE="AGPL"
 
