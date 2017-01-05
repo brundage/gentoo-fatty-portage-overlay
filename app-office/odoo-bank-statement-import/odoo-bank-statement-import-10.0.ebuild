@@ -22,5 +22,6 @@ KEYWORDS="amd64 x86"
 DEPEND="app-office/odoo"
 
 src_install() {
+  mkdir -p "$(python_get_sitedir)/${PN}/"
   cp -R "${S}/" "$(python_get_sitedir)/${PN}/" || die "Install failed!"
 }
