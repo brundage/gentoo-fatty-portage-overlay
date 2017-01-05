@@ -15,13 +15,17 @@ LICENSE="AGPL"
 KEYWORDS="amd64 x86"
 DEPEND="app-office/odoo"
 
+ADDONS="${D}/$(python_get_sitedir)/odoo/addons"
+
+# /usr/lib64/python2.7/site-packages/odoo/addons/
 src_install() {
-  mkdir -p "${D}/$(python_get_sitedir)/${PN}/"
-  for F in account_bank_statement_import_camt account_bank_statement_import_mt940_base account_bank_statement_import_mt940_nl_ing account_bank_statement_import_mt940_nl_rabo account_bank_statement_import_qif account_bank_statement_import_save_file base_bank_account_number_unique; do
-    elog "cp -Rp ${S}/${F} ${D}$(python_get_sitedir)"
-    cp -Rp "${S}/${F}" "${D}$(python_get_sitedir)" || die "cp -Rp ${S}/${F} ${D}$(python_get_sitedir)"
+  mkdir -p "${ADDONS}"
+  for F in account_bank_statement_import_qif base_bank_account_number_unique account_bank_statement_import_ofx; do
+    elog "cp -Rp ${S}/${F} ${ADDONS}"
+    cp -Rp "${S}/${F}" "${ADDONS}" || die "cp -Rp ${S}/${F} ${ADDONS}"
   done
 
-    elog "cp -Rp ${S}/setup ${D}$(python_get_sitedir)/${PN}"
-    cp -Rp "${S}/setup" "${D}$(python_get_sitedir)/${PN}"
+  mkdir -p "${ADDONS}/${PN}"
+  elog "cp -Rp ${S}/setup${ADDONS}/${PN}"
+  cp -Rp "${S}/setup" "${ADDONS}/${PN}"
 }
