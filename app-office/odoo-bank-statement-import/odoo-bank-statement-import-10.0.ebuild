@@ -4,20 +4,15 @@
 EAPI="5"
 SLOT="0"
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
-
 inherit eutils python-utils-r1 git-r3 distutils-r1
-
+EPYTHON="python"
+PYTHON=$EPYTHON
 DESCRIPTION="Odoo Bank Import Addons"
-
 HOMEPAGE="https://github.com/OCA/bank-statement-import"
-
 EGIT_CHECKOUT_DIR="${S}"
 EGIT_REPO_URI="https://github.com/OCA/bank-statement-import.git"
-
 LICENSE="AGPL"
-
 KEYWORDS="amd64 x86"
-
 DEPEND="app-office/odoo"
 
 src_compile() {
