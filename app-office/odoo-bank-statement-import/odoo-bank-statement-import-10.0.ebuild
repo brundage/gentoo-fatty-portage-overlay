@@ -4,7 +4,7 @@
 EAPI="5"
 SLOT="0"
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
-inherit eutils python-utils-r1 git-r3 distutils-r1
+inherit eutils python-utils-r1 git-r3
 EPYTHON="python"
 PYTHON=$EPYTHON
 DESCRIPTION="Odoo Bank Import Addons"
