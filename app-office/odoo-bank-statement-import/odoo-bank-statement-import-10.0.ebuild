@@ -17,7 +17,7 @@ DEPEND="app-office/odoo"
 
 src_install() {
   mkdir -p "${D}/$(python_get_sitedir)/${PN}/"
-  for F in $(ls "${S}/account_bank*" "${S}/base*"}; do
+  for F in $(ls "${S}/account_bank*" "${S}/base*"); do
     elog "cp -Rp ${F} ${D}$(python_get_sitedir)"
     cp -Rp "${F}" "${D}$(python_get_sitedir)" || die "cp -Rp ${F} ${D}$(python_get_sitedir)"
   done
