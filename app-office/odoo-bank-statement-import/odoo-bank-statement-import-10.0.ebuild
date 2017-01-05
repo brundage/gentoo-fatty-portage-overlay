@@ -5,6 +5,8 @@ EAPI="5"
 SLOT="0"
 
 inherit eutils python-utils-r1 git-r3
+EPYTHON="python"
+PYTHON=$EPYTHON
 
 DESCRIPTION="Odoo Bank Import Addons"
 
