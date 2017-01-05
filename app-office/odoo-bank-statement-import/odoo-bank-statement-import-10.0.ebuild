@@ -17,8 +17,11 @@ DEPEND="app-office/odoo"
 
 src_install() {
   mkdir -p "${D}/$(python_get_sitedir)/${PN}/"
-  for F in $(ls "${S}/account_bank*" "${S}/base*"); do
-    elog "cp -Rp ${F} ${D}$(python_get_sitedir)"
-    cp -Rp "${F}" "${D}$(python_get_sitedir)" || die "cp -Rp ${F} ${D}$(python_get_sitedir)"
+  for F in account_bank_statement_import_camt account_bank_statement_import_mt940_base account_bank_statement_import_mt940_nl_ing account_bank_statement_import_mt940_nl_rabo account_bank_statement_import_qif account_bank_statement_import_save_file base_bank_account_number_unique; do
+    elog "cp -Rp ${S}/${F} ${D}$(python_get_sitedir)"
+    cp -Rp "${S}/${F}" "${D}$(python_get_sitedir)" || die "cp -Rp ${S}/${F} ${D}$(python_get_sitedir)"
   done
+
+    elog "cp -Rp ${S}/setup ${D}$(python_get_sitedir)/${PN}"
+    cp -Rp "${S}/setup" "${D}$(python_get_sitedir)/${PN}"
 }
