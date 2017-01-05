@@ -23,5 +23,6 @@ DEPEND="app-office/odoo"
 
 src_preinst() {
   mkdir -p "${D}/$(python_get_sitedir)/${PN}/"
-  cp -R "${S}/" "${D}/$(python_get_sitedir)/${PN}/" || die "Install failed!"
+  cp -R "${S}/" "${D}/$(python_get_sitedir)/${PN}/" || die "cp -R ${S}/ ${D}/$(python_get_sitedir)/${PN}/"
+  die "${D}/$(python_get_sitedir)/${PN}/"
 }
