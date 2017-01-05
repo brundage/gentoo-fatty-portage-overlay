@@ -6,14 +6,11 @@ SLOT="0"
 
 inherit eutils python-utils-r1 git-r3
 
-site_packages=python_get_sitedir
-
-
 DESCRIPTION="Odoo Bank Import Addons"
 
 HOMEPAGE="https://github.com/OCA/bank-statement-import"
 
-EGIT_CHECKOUT_DIR="${D}/${site_packages}"
+EGIT_CHECKOUT_DIR="${D}$(python_get_sitedir)"
 EGIT_REPO_URI="https://github.com/OCA/bank-statement-import.git"
 
 LICENSE="AGPL"
