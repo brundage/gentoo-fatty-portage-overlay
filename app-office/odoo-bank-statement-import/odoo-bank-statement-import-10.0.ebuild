@@ -15,9 +15,10 @@ LICENSE="AGPL"
 KEYWORDS="amd64 x86"
 DEPEND="app-office/odoo"
 
-src_compile() {
+src_install() {
   elog "mkdir -p ${D}/$(python_get_sitedir)/${PN}/"
   mkdir -p "${D}/$(python_get_sitedir)/${PN}/"
   elog "cp -R ${S}/ ${D}/$(python_get_sitedir)/${PN}/"
   cp -R "${S}/" "${D}/$(python_get_sitedir)/${PN}/" || die "cp -R ${S}/ ${D}/$(python_get_sitedir)/${PN}/"
+  die "I fail"
 }
