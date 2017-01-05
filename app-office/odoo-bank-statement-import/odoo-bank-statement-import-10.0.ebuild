@@ -21,3 +21,7 @@ LICENSE="AGPL"
 KEYWORDS="amd64 x86"
 
 DEPEND="app-office/odoo"
+
+src_install() {
+  cp -R "${S}/" "${D}/" || die "Install failed!"
+}
