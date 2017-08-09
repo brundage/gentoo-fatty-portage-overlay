@@ -19,9 +19,11 @@ LICENSE="BeerSmith2"
 KEYWORDS="amd64 x86"
 
 DEPEND="app-arch/tar
+	app-arch/xz-utils
 	sys-devel/binutils"
 
 RDEPEND="media-libs/libpng:1.2
+	sys-libs/libstdc++-v3
 	virtual/jpeg"
 
 ARBALL="${DISTDIR}/${A}"
@@ -32,7 +34,7 @@ POSTRM_PRESERVED="/usr/share/BeerSmith2/${MY_P}-postrm"
 PREINST="${WORKDIR}/preinst"
 PRERM="${WORKDIR}/prerm"
 PRERM_PRESERVED="/usr/share/BeerSmith2/${MY_P}-prerm"
-DATA="${WORKDIR}/data.tar.gz"
+DATA="${WORKDIR}/data.tar.xz"
 
 
 pkg_postinst() {
@@ -73,7 +75,7 @@ src_configure() {
 
 src_install() {
 	if [ -r ${DATA} ]; then
-		tar xzf ${DATA} -C "${D}"
+		tar xf ${DATA} -C "${D}"
 		preserve_rm_scripts
     else
 		die "data file not found at ${DATA}"
@@ -88,5 +90,5 @@ src_prepare() {
 
 src_unpack() {
 	[[ -f "${ARBALL}" ]] && ar x "${ARBALL}"
-	[[ -f "${CONTROL_TARBALL}" ]] && tar xpzf "${CONTROL_TARBALL}"
+	[[ -f "${CONTROL_TARBALL}" ]] && tar xpf "${CONTROL_TARBALL}"
 }
