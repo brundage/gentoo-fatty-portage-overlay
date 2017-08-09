@@ -12,7 +12,7 @@ DESCRIPTION="BeerSmith home brewing software"
 
 HOMEPAGE="http://beersmith.com/"
 
-SRC_URI="amd64? ( https://s3.amazonaws.com/BeerSmith2-3/${MY_P}_amd64.deb )"
+SRC_URI="amd64? ( https://s3.amazonaws.com/beersmith2-3/${MY_P}_amd64.deb )"
 
 LICENSE="BeerSmith2"
 
