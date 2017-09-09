@@ -16,14 +16,12 @@ SRC_URI="amd64? ( https://s3.amazonaws.com/beersmith2-3/${MY_P}_amd64.deb )"
 
 LICENSE="BeerSmith2"
 
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64"
 
 DEPEND="app-arch/tar
-	app-arch/xz-utils
 	sys-devel/binutils"
 
 RDEPEND="media-libs/libpng:1.2
-	sys-libs/libstdc++-v3
 	virtual/jpeg"
 
 ARBALL="${DISTDIR}/${A}"
@@ -34,7 +32,7 @@ POSTRM_PRESERVED="/usr/share/BeerSmith2/${MY_P}-postrm"
 PREINST="${WORKDIR}/preinst"
 PRERM="${WORKDIR}/prerm"
 PRERM_PRESERVED="/usr/share/BeerSmith2/${MY_P}-prerm"
-DATA="${WORKDIR}/data.tar.xz"
+DATA="${WORKDIR}/data.tar.gz"
 
 
 pkg_postinst() {
@@ -75,7 +73,7 @@ src_configure() {
 
 src_install() {
 	if [ -r ${DATA} ]; then
-		tar xf ${DATA} -C "${D}"
+		tar xzf ${DATA} -C "${D}"
 		preserve_rm_scripts
     else
 		die "data file not found at ${DATA}"
@@ -90,5 +88,5 @@ src_prepare() {
 
 src_unpack() {
 	[[ -f "${ARBALL}" ]] && ar x "${ARBALL}"
-	[[ -f "${CONTROL_TARBALL}" ]] && tar xpf "${CONTROL_TARBALL}"
+	[[ -f "${CONTROL_TARBALL}" ]] && tar xpzf "${CONTROL_TARBALL}"
 }
