@@ -16,14 +16,13 @@ SRC_URI="amd64? ( https://s3.amazonaws.com/beersmith2-3/${MY_P}_amd64.deb )"
 
 LICENSE="BeerSmith2"
 
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64"
 
 DEPEND="app-arch/tar
-	app-arch/xz-utils
+    app-arch/xz-utils
 	sys-devel/binutils"
 
 RDEPEND="media-libs/libpng:1.2
-	sys-libs/libstdc++-v3
 	virtual/jpeg"
 
 ARBALL="${DISTDIR}/${A}"
@@ -90,5 +89,5 @@ src_prepare() {
 
 src_unpack() {
 	[[ -f "${ARBALL}" ]] && ar x "${ARBALL}"
-	[[ -f "${CONTROL_TARBALL}" ]] && tar xpf "${CONTROL_TARBALL}"
+	[[ -f "${CONTROL_TARBALL}" ]] && tar xpzf "${CONTROL_TARBALL}"
 }
