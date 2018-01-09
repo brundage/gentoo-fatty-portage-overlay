@@ -20,6 +20,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE="+postgres ssl"
 
 CDEPEND="postgres? ( dev-db/postgresql )
+  dev-python/pip
   net-libs/nodejs
 "
 
