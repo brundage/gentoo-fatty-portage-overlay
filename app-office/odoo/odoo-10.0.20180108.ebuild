@@ -29,19 +29,19 @@ DEPEND="${CDEPEND}"
 ODOO_USER="odoo"
 ODOO_GROUP="odoo"
 
-S="${WORKDIR}/${P/odoo-10.0./odoo-10.0-}"
+S="${WORKDIR}/${P/odoo-10.0./odoo-10.0.post}"
 
-pkg_setup() {
-  python_set_active_version 2
-  python_pkg_setup
-}
+#pkg_setup() {
+#  python_set_active_version 2
+#  python_pkg_setup
+#}
 
 src_unpack() {
   unpack ${A}
 }
 
 src_install() {
-  distutils_src_install
+#  distutils_src_install
 
 #  newinitd "${FILESDIR}/odoo-initd-${BASE_VERSION}" "${PN}"
 #  newconfd "${FILESDIR}/odoo-confd-${BASE_VERSION}" "${PN}"
