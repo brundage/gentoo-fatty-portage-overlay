@@ -41,7 +41,7 @@ src_unpack() {
 }
 
 src_install() {
-#  distutils_src_install
+  default_src_install
 
 #  newinitd "${FILESDIR}/odoo-initd-${BASE_VERSION}" "${PN}"
 #  newconfd "${FILESDIR}/odoo-confd-${BASE_VERSION}" "${PN}"
