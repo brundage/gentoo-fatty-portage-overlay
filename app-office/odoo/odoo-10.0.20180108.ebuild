@@ -8,7 +8,7 @@ EAPI="6"
 
 LICENSE="AGPLv3"
 
-PYTHON_COMPAT=( python{2_7,3_1,3_2,3_4,3_5} pypy pypy3 )
+PYTHON_COMPAT=( python2_7 )
 
 #inherit eutils distutils user versionator
 inherit distutils-r1 user
@@ -21,12 +21,13 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="+postgres ssl"
 
-CDEPEND="postgres? ( dev-db/postgresql )
+RDEPEND="postgres? ( dev-db/postgresql )
   net-libs/nodejs
 "
 
-RDEPEND="${CDEPEND}"
-DEPEND="${CDEPEND}"
+DEPEND="${CDEPEND}
+  dev-python/setuptools
+"
 
 ODOO_USER="odoo"
 ODOO_GROUP="odoo"
@@ -35,7 +36,7 @@ S="${WORKDIR}/${P/odoo-10.0./odoo-10.0.post}"
 
 pkg_setup() {
 #  python_set_active_version 2
-#  python_pkg_setup
+  python_pkg_setup
 
   enewgroup ${ODOO_GROUP}
   enewuser ${ODOO_USER} -1 -1 -1 ${ODOO_GROUP}
