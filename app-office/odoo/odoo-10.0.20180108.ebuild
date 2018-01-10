@@ -9,7 +9,7 @@ EAPI="6"
 LICENSE="AGPLv3"
 
 #inherit eutils distutils user versionator
-inherit user
+inherit distutils user
 
 DESCRIPTION="Open Source ERP & CRM"
 HOMEPAGE="https://www.odoo.com/"
