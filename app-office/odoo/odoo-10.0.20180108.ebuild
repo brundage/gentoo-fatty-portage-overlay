@@ -36,7 +36,7 @@ S="${WORKDIR}/${P/odoo-10.0./odoo-10.0.post}"
 
 pkg_setup() {
 #  python_set_active_version 2
-  default_pkg_setup
+  python-any-r1_pkg_setup
 
   enewgroup ${ODOO_GROUP}
   enewuser ${ODOO_USER} -1 -1 -1 ${ODOO_GROUP}
