@@ -5,11 +5,11 @@
 # taken from http://gpo.zugaina.org/app-office/odoo
 
 EAPI="6"
-PYTHON_DEPEND="2"
 
 LICENSE="AGPLv3"
 
 #inherit eutils distutils user versionator
+inherit user
 
 DESCRIPTION="Open Source ERP & CRM"
 HOMEPAGE="https://www.odoo.com/"
@@ -31,42 +31,40 @@ ODOO_GROUP="odoo"
 
 S="${WORKDIR}/${P/odoo-10.0./odoo-10.0.post}"
 
-#pkg_setup() {
+pkg_setup() {
 #  python_set_active_version 2
 #  python_pkg_setup
-#}
 
-src_unpack() {
-  unpack ${A}
-}
-
-src_install() {
-  default_src_install
-
-#  newinitd "${FILESDIR}/odoo-initd-${BASE_VERSION}" "${PN}"
-#  newconfd "${FILESDIR}/odoo-confd-${BASE_VERSION}" "${PN}"
-  keepdir /var/log/odoo
-
-#  insinto /etc/logrotate.d
-#  newins "${FILESDIR}"/odoo.logrotate odoo || die
-#  dodir /etc/odoo
-#  insinto /etc/odoo
-#  newins "${FILESDIR}"/odoo-cfg-${BASE_VERSION} odoo.cfg || die
-}
-
-pkg_preinst() {
   enewgroup ${ODOO_GROUP}
   enewuser ${ODOO_USER} -1 -1 -1 ${ODOO_GROUP}
+}
 
-  fowners ${ODOO_USER}:${ODOO_GROUP} /var/log/odoo
-  fowners -R ${ODOO_USER}:${ODOO_GROUP} "$(python_get_sitedir)/${PN}/addons/"
 
+#src_install() {
+#  default_src_install
+
+  # For later init.d and conf.d crap
+  #newinitd "${FILESDIR}/odoo-initd-${BASE_VERSION}" "${PN}"
+  #newconfd "${FILESDIR}/odoo-confd-${BASE_VERSION}" "${PN}"
+  #dodir /etc/odoo
+  #insinto /etc/odoo
+  #newins "${FILESDIR}"/odoo-cfg-${BASE_VERSION} odoo.cfg || die
+
+#  keepdir /var/log/odoo
+#  insinto /etc/logrotate.d
+#  newins "${FILESDIR}"/odoo.logrotate odoo || die
+
+#}
+
+pkg_preinst() {
+#  fowners ${ODOO_USER}:${ODOO_GROUP} /var/log/odoo
+#  fowners -R ${ODOO_USER}:${ODOO_GROUP} "$(python_get_sitedir)/${PN}/addons/"
   use postgres || sed -i '6,8d' "${D}/etc/init.d/odoo" || die "sed failed"
 }
 
 pkg_postinst() {
-  chown ${ODOO_USER}:${ODOO_GROUP} /var/log/odoo
-  chown -R ${ODOO_USER}:${ODOO_GROUP} "$(python_get_sitedir)/${PN}/addons/"
+#  chown ${ODOO_USER}:${ODOO_GROUP} /var/log/odoo
+#  chown -R ${ODOO_USER}:${ODOO_GROUP} "$(python_get_sitedir)/${PN}/addons/"
 
   elog "In order to create the database user, run:"
   elog " emerge --config =${CATEGORY}/${PF}"
@@ -78,7 +76,6 @@ pkg_postinst() {
   elog "You will need to install less and less-pulgin-clean-css"
   elog "  npm install -g less"
   elog "  npm install -g less-plugin-clean-css"
-  elog
 }
 
 psqlquery() {
