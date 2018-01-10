@@ -8,7 +8,7 @@ EAPI="6"
 
 LICENSE="AGPLv3"
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_{4,5,6} pypy )
 
 #inherit eutils distutils user versionator
 inherit distutils-r1 user
