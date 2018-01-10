@@ -8,8 +8,10 @@ EAPI="6"
 
 LICENSE="AGPLv3"
 
+PYTHON_COMPAT=( python{2_7,3_1,3_2,3_4,3_5} pypy pypy3 )
+
 #inherit eutils distutils user versionator
-inherit distutils user
+inherit distutils-r1 user
 
 DESCRIPTION="Open Source ERP & CRM"
 HOMEPAGE="https://www.odoo.com/"
