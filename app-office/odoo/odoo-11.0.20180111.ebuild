@@ -29,7 +29,7 @@ DEPEND="${CDEPEND}
 ODOO_USER="odoo"
 ODOO_GROUP="odoo"
 
-S="${WORKDIR}/${P/odoo-10.0./odoo-10.0.post}"
+S="${WORKDIR}/${P/odoo-11.0./odoo-11.0.post}"
 
 pkg_preinst() {
   use postgres || sed -i '6,8d' "${D}/etc/init.d/odoo" || die "sed failed"
