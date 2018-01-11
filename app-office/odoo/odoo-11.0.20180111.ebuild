@@ -55,7 +55,7 @@ RDEPEND="postgres? ( dev-db/postgresql[server] )
   dev-python/vatnumber
   dev-python/vobject
   dev-python/werkzeug
-  dev-python/xlswriter
+  dev-python/xlsxwriter
   dev-python/xlwt
   dev-python/xlrd
   net-libs/nodejs
