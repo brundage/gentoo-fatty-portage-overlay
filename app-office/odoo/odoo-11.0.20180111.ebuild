@@ -13,7 +13,7 @@ HOMEPAGE="https://www.odoo.com/"
 SRC_URI="https://nightly.odoo.com/11.0/nightly/src/${PN}_${PV}.tar.gz"
 LICENSE="AGPLv3"
 
-IUSE="+postgres ssl"
+IUSE="ebay +postgres ssl"
 
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
@@ -22,7 +22,7 @@ RDEPEND="postgres? ( dev-db/postgresql[server] )
   dev-python/Babel
   dev-python/decorator
   dev-python/docutils
-  dev-python/ebaysdk
+  ebay? ( dev-python/ebaysdk )
   dev-python/feedparser
   dev-python/gevent
   dev-python/greenlet
