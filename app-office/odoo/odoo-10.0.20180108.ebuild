@@ -75,7 +75,7 @@ psqlquery() {
 src_unpack() {
   default_src_unpack
 
-  mkdir "${D}/var/log/odoo"
-  fowners ${ODOO_USER}:${ODOO_GROUP} "${D}/var/log/odoo"
-  fowners -R ${ODOO_USER}:${ODOO_GROUP} "${D}/$(python_get_sitedir)/${PN}/addons/"
+  mkdir -p "/var/log/odoo"
+  fowners ${ODOO_USER}:${ODOO_GROUP} "/var/log/odoo"
+  fowners -R ${ODOO_USER}:${ODOO_GROUP} "$(python_get_sitedir)/${PN}/addons/"
 }
