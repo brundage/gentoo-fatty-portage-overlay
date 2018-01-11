@@ -41,7 +41,7 @@ RDEPEND="postgres? ( dev-db/postgresql[server] )
   dev-python/pydot
   dev-python/pyldap
   dev-python/pyparsing
-  dev-python/pyPDF2
+  dev-python/PyPDF2
   dev-python/pyserial
   dev-python/python-dateutil
   dev-python/pytz
