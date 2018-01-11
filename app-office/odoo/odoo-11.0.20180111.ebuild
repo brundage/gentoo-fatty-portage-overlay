@@ -10,7 +10,7 @@ inherit distutils-r1 eutils user
 
 DESCRIPTION="Open Source ERP & CRM"
 HOMEPAGE="https://www.odoo.com/"
-SRC_URI="https://nightly.odoo.com/10.0/nightly/src/${PN}_${PV}.tar.gz"
+SRC_URI="https://nightly.odoo.com/11.0/nightly/src/${PN}_${PV}.tar.gz"
 LICENSE="AGPLv3"
 
 IUSE="+postgres ssl"
