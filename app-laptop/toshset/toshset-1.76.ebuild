@@ -16,7 +16,7 @@ DEPEND="sys-apps/pciutils"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-CXXFLAGS=""
+CXXFLAGS="-std=c++11"
 
 src_unpack() {
 	unpack ${A}
