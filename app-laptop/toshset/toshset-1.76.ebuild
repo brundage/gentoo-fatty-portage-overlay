@@ -16,8 +16,9 @@ DEPEND="sys-apps/pciutils"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+CXXFLAGS=""
+
 src_unpack() {
 	unpack ${A}
-	epatch toshset_${PV}-2ubuntu1.diff
 	sed -i 's/CFLAGS = -march=i486 \(-Wall @OS_CFLAGS@ @DEBUGFLAGS@\)/CFLAGS := \1 ${CFLAGS}/' ${S}/Makefile.in || die "sed failed"
 }
