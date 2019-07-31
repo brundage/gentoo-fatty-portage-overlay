@@ -16,14 +16,8 @@ DEPEND="sys-apps/pciutils"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-#RESTRICT=mirror
-#
-#src_unpack() {
-#	unpack ${A}
-#	epatch toshset_${PV}-2ubuntu1.diff
-#	sed -i 's/CFLAGS = -march=i486 \(-Wall @OS_CFLAGS@ @DEBUGFLAGS@\)/CFLAGS := \1 ${CFLAGS}/' ${S}/Makefile.in || die "sed failed"
-#}
-#
-#src_install() {
-#	make DESTDIR=${D} install || die
-#}
+src_unpack() {
+	unpack ${A}
+	epatch toshset_${PV}-2ubuntu1.diff
+	sed -i 's/CFLAGS = -march=i486 \(-Wall @OS_CFLAGS@ @DEBUGFLAGS@\)/CFLAGS := \1 ${CFLAGS}/' ${S}/Makefile.in || die "sed failed"
+}
