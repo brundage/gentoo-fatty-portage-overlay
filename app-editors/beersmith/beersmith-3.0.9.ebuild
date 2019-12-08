@@ -33,10 +33,10 @@ RDEPEND="app-arch/zstd
 	dev-libs/glib
 	media-libs/libpng
 	virtual/libc
-	virtual/libstdc++
 	x11-libs/libX11
 	x11-libs/libSM
 "
+#	virtual/libstdc++
 
 ARBALL="${DISTDIR}/${A}"
 CONTROL_TARBALL="${WORKDIR}/control.tar.gz"
