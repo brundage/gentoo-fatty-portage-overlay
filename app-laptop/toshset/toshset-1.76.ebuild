@@ -15,10 +15,3 @@ IUSE=""
 DEPEND="sys-apps/pciutils"
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
-CXXFLAGS="-std=c++11"
-
-src_unpack() {
-	unpack ${A}
-	sed -i 's/CFLAGS = -march=i486 \(-Wall @OS_CFLAGS@ @DEBUGFLAGS@\)/CFLAGS := \1 ${CFLAGS}/' ${S}/Makefile.in || die "sed failed"
-}

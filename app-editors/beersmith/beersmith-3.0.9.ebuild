@@ -23,18 +23,20 @@ DEPEND="app-arch/tar
 	sys-devel/binutils"
 
 RDEPEND="app-arch/zstd
-	dev-libs/glib
-	>=dev-libs/openssl-1.1
+	dev-libs/openssl
 	media-libs/fontconfig
-	media-libs/libpng
 	net-libs/webkit-gtk
-    virtual/libc
-    virtual/libstdc++
 	x11-libs/cairo
+	x11-libs/pango
 	x11-libs/gdk-pixbuf
 	x11-libs/libSM
+	dev-libs/glib
+	media-libs/libpng
+	virtual/libc
+	virtual/libstdc++
 	x11-libs/libX11
-	x11-libs/pango"
+	x11-libs/libSM
+"
 
 ARBALL="${DISTDIR}/${A}"
 CONTROL_TARBALL="${WORKDIR}/control.tar.gz"
