@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=sys-apps/pciutils
+DESCRIPTION=Utility to modify HCI/SCI controls on Toshiba Laptops
+EAPI=7
+HOMEPAGE=http://www.schwieters.org/toshset
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL
+RDEPEND=sys-apps/pciutils
+SLOT=0
+SRC_URI=http://archive.ubuntu.com/ubuntu/pool/main/t/toshset/toshset_1.76.orig.tar.gz
+_md5_=31636c96a0b4a2bb27d5d6474d8e044f

@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare prerm unpack
+DEPEND=app-arch/tar app-arch/xz-utils sys-devel/binutils
+DESCRIPTION=BeerSmith 3 Home Brewing Software
+EAPI=5
+HOMEPAGE=http://beersmith.com/
+KEYWORDS=amd64
+LICENSE=BeerSmith
+RDEPEND=app-arch/zstd dev-libs/openssl media-libs/fontconfig net-libs/webkit-gtk x11-libs/cairo x11-libs/pango x11-libs/gdk-pixbuf x11-libs/libSM dev-libs/glib media-libs/libpng virtual/libc x11-libs/libX11 x11-libs/libSM
+SLOT=0
+SRC_URI=amd64? ( https://s3.amazonaws.com/beersmith-3/BeerSmith-3.0.9_amd64.deb )
+_md5_=cf38806e74bf442474802f99e27c8f7a

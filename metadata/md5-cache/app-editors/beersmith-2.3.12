@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare prerm unpack
+DEPEND=app-arch/tar app-arch/xz-utils sys-devel/binutils
+DESCRIPTION=BeerSmith home brewing software
+EAPI=5
+HOMEPAGE=http://beersmith.com/
+KEYWORDS=amd64
+LICENSE=BeerSmith2
+RDEPEND=media-libs/libpng:1.2 virtual/jpeg
+SLOT=0
+SRC_URI=amd64? ( https://s3.amazonaws.com/beersmith2-3/BeerSmith-2.3.12_amd64.deb )
+_md5_=b898135ce663e8996d8d9ebeac94664f

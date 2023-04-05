@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install prepare unpack
+DEPEND=app-arch/tar sys-devel/binutils
+DESCRIPTION=Slack messaging application for teams
+EAPI=5
+HOMEPAGE=https://slack.com/
+KEYWORDS=amd64 x86
+LICENSE=Slack
+RDEPEND=>=gnome-base/gconf-2 >=x11-libs/gtk+-2 virtual/libudev
+SLOT=0
+SRC_URI=amd64? ( https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb )
+_md5_=c59c8347d33776f138e1a600a427f736
