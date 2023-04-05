@@ -1,0 +1,3 @@
+pkgdev manifest  # As root
+pkgdev commit
+pkgdev push

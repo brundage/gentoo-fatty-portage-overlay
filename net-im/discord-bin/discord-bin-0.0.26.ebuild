@@ -33,6 +33,7 @@ RDEPEND="
 	dev-libs/nss
 	media-libs/alsa-lib
 	media-libs/mesa[gbm(+)]
+	media-libs/swiftshader
 	net-print/cups
 	sys-apps/dbus
 	sys-libs/glibc
