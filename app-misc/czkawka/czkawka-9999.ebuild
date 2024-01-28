@@ -11,7 +11,7 @@ DESCRIPTION="Czkawka is a simple, fast and easy to use alternative to FSlint, wr
 HOMEPAGE="https://github.com/qarmin/czkawka"
 
 EGIT_REPO_URI="https://github.com/qarmin/${PN}.git"
-KEYWORDS=""
+KEYWORDS="~AMD64"
 
 LICENSE="MIT"
 SLOT="0"
