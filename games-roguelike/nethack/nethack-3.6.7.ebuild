@@ -8,7 +8,7 @@ inherit desktop flag-o-matic toolchain-funcs
 DESCRIPTION="The ultimate old-school single player dungeon exploration game"
 HOMEPAGE="https://www.nethack.org/"
 SRC_URI="https://nethack.org/download/${PV}/nethack-${PV//.}-src.tgz -> ${P}.tar.gz"
-S="${WORKDIR}/NetHack-NetHack-${PV}_Released"
+S="${WORKDIR}/NetHack-${PV}"
 
 LICENSE="nethack"
 SLOT="0"
