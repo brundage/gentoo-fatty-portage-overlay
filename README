@@ -1,5 +1,0 @@
-https://wiki.gentoo.org/wiki/Standard_git_workflow
-
-pkgdev manifest -d /tmp/distfiles
-pkgdev commit
-pkgdev push
