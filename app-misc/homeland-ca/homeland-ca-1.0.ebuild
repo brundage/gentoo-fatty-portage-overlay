@@ -10,7 +10,7 @@ SRC_URI=""
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64"
+KEYWORDS=""
 
 # This package provides the cert, but needs the system tool to update the store
 RDEPEND="app-misc/ca-certificates"
