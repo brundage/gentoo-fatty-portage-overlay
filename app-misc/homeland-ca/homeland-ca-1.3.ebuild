@@ -22,7 +22,7 @@ src_install() {
 	insinto /usr/local/share/ca-certificates/homeland
 	newins "${FILESDIR}/root_ca.crt" "${PN}.crt"
 	insinto /etc/firefox/policies
-	newins "${FILESDIR}/policies.json"
+	newins "${FILESDIR}/policies.json" "policies.json"
 }
 
 pkg_postinst() {
