@@ -1,0 +1,11 @@
+{
+  "policies": {
+    "DisableAppUpdate": true,
+    "Certificates": {
+      "ImportEnterpriseRoots": true,
+      "Install": [
+        "/usr/local/share/ca-certificates/homeland/homeland-ca.crt"
+      ]
+    }
+  }
+}

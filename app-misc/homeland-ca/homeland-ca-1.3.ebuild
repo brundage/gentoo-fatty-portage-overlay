@@ -19,20 +19,22 @@ S="${WORKDIR}"
 
 src_install() {
 	# Standard Gentoo path for custom CA certs
-	insinto /usr/local/share/ca-certificates
+	insinto /usr/local/share/ca-certificates/homeland
 	newins "${FILESDIR}/root_ca.crt" "${PN}.crt"
+	insinto /etc/firefox/policies
+	newins "${FILESDIR}/policies.json"
 }
 
 pkg_postinst() {
 	# Automatically update the trust store after installation
 	ebegin "Updating system CA certificates"
-	/usr/sbin/update-ca-certificates
+	/usr/sbin/update-ca-certificates --fresh
 	eend $?
 }
 
 pkg_postrm() {
 	# Clean up the trust store after removal
 	ebegin "Updating system CA certificates (removal)"
-	/usr/sbin/update-ca-certificates
+	/usr/sbin/update-ca-certificates --fresh
 	eend $?
 }
